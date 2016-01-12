@@ -1,0 +1,42 @@
+This version: 
+	- Complete CRUD for Jinterface, connect with ErlConnection via ecc_java
+
+To build this code, run the following command:
+
+erlc -o ./ebin ./src/*.erl
+
+To run the program, first start Erlang like this:
+
+erl -pa ./ebin ~/Documents/Riak/riak-erlang-client/ebin/ ~/Documents/Riak/riak-erlang-client/deps/*/ebin -sname n1@localhost -setcookie secret
+
+erl -pa ./ebin ~/Documents/Riak/riak-erlang-client/ebin/ ~/Documents/Riak/riak-erlang-client/deps/*/ebin -name n2 -setcookie ecc-ycsb
+
+Then, run the following in the Erlang shell:
+
+1> application:start(ecc).
+ok
+
+ecc:list_neighbor().
+
+
+net_adm:ping('javaNode@wifi-student2-46.sri.ucl.ac.be').
+erlangNode@wifi-student2-46.sri.ucl.ac.be
+erlangNode@vichenkas-MacBook-Pro.local
+net_adm:ping('javaNode@vichenkas-MacBook-Pro').
+ {theMailbox, 'javaNode@vichenkas-MacBook-Pro'} ! {self(), "Eric"}.
+
+
+
+
+Test script
+
+erl -pa ./ebin ~/Documents/Riak/riak-erlang-client/ebin/ ~/Documents/Riak/riak-erlang-client/deps/*/ebin
+
+c(ecc_core).
+ecc_core:start_link(10037).
+ecc_core:put(one, 0, two).
+ecc_core:get(one).
+ecc_core:delete(one).
+ecc_core:list_keys().
+
+erl -pa ./ebin ~/Documents/Riak/riak-erlang-client/ebin/ ~/Documents/Riak/riak-erlang-client/deps/*/ebin -sname n1 -setcookie secret
