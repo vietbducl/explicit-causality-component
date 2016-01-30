@@ -1,5 +1,5 @@
 # explicit-causality-component
-Explicit Causality Component Impl
+Explicit Causality Component Implementation
 
 To build this code, run the following command:
 
@@ -16,17 +16,21 @@ erl -pa ./ebin ~/Documents/Riak/riak-erlang-client/ebin/ ~/Documents/Riak/riak-e
 Then, run the following in the Erlang shell:
 
 1> application:start(ecc).
-ok
+
 
 2> nodes().
+
 //show neighbor
 
 Sample put/get commands:
 
 ecc:insert(one, two, []).
+
 ecc:insert(vanroy, prof, [{manuel, 0}]).
+
 ecc:lookup(one).
 
-Other commands to check the state of data store: list_keys/0, get_deplist/0, get_buffer_list/0
+Helper commands to check the state of data store: list_keys/0, get_deplist/0, get_buffer_list/0
 
 
+File ecc_java opens a door for other application to connect to ecc using JInterface. Sample code is provided in java_src. 
