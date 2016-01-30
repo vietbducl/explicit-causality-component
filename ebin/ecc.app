@@ -10,6 +10,6 @@
   {mod, {ecc_app, []}},
   {env, [
   		{riakport, 8087},
-  		{neighbors, ['n2@Viets-Mac-mini.home']}
+  		{neighbors, ['n2@macbookpro.home']}
   ]}
  ]}.
